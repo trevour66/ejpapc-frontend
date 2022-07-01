@@ -1,32 +1,51 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+<div>
+  <HeaderComponent/>
+  <router-view/>
+  <FooterComponent/>
+</div>
 </template>
 
+<script>
+import HeaderComponent from "@/components/header/HeaderComponent.vue";
+import FooterComponent from "@/components/footer/FooterComponent.vue";
+import { mapActions } from 'vuex'
+
+export default {
+    components: { 
+      HeaderComponent,
+      FooterComponent
+    },
+    methods: {
+      ...mapActions(['changeNav']),
+      trackRoute(to){
+        to.matched.forEach((match)=>{
+          if(match.path == '/admin'){
+            this.changeNav('admin')          
+          }else if(match.path == ''){
+            this.changeNav('main')          
+          }
+        })
+      }
+    },
+    watch:{
+      $route(to, from){
+        this.trackRoute(to)
+      }
+    },
+    created(){
+      let route = this.$route
+      this.trackRoute(route)
+    }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.bg-body {
+    --tw-bg-opacity: 1;
+    background-color: rgb(241 245 251/var(--tw-bg-opacity));
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+body {
+    font-family: DM Sans,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
 </style>
