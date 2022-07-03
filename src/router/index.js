@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import LoginView from '../views/LoginView.vue'
 import DashboardView from '../views/DashboardView.vue'
 import AdminView from '../views/AdminView.vue'
+import TimelineView from '../views/admin/Timeline.vue'
 
 
 Vue.use(VueRouter)
@@ -35,6 +36,7 @@ const routes = [
       {
         path: 'timelines',
         name: 'timelines',
+        component: TimelineView
       },
       {
         path: 'builder',

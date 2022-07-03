@@ -280,9 +280,16 @@
 .tab.text-customb-500:hover{
     color: var(--custom-purple-7);
 }
-.nav-active:hover{
-    background-color: var(--custom-purple-6);
-}
+
+
+/*
+    Nav
+*/
 .nav:hover{
     background-color: var(--custom-gray-1);
+}
+.router-link-active,
+.router-link-active:hover{
+    color: rgb(255, 255, 255) !important;
+    background-color: var(--custom-purple-6);
 }

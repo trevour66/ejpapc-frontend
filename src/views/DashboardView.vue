@@ -1,5 +1,5 @@
 <template>
-  <div class="antialiased bg-body text-body font-body">
+  <div class="antialiased bg-body text-body font-body admin-port">
     <!-- Content Begins -->
     <div class="mx-auto lg:ml-80">
 
@@ -188,7 +188,6 @@
 
     </div>
     <!-- Content Starts -->
-
   </div>
 </template>
 

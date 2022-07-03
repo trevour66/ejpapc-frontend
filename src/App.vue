@@ -41,6 +41,8 @@ export default {
 </script>
 
 <style>
+@import 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap';
+@import '@/assets/css/custom-style.css';
 .bg-body {
     --tw-bg-opacity: 1;
     background-color: rgb(241 245 251/var(--tw-bg-opacity));
@@ -48,4 +50,8 @@ export default {
 body {
     font-family: DM Sans,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
+.admin-port{
+  height: 100vh;
+}
+
 </style>
